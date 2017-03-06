@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
+use Session;
+use Illuminate\Support\Facades\Redirect;
 class CustomAuthController extends Controller
 {
     //
@@ -29,6 +31,15 @@ class CustomAuthController extends Controller
 
         return redirect($this->redirectPath());
 
+
+    }
+
+    public function logout(){
+
+            Auth::logout();
+
+        Session::flash('message', 'logged out successfully!');
+        return redirect('/login');
 
     }
 

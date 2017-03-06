@@ -2,15 +2,27 @@
 
 namespace App\Http\Controllers;
 
+//use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Article;
 use View;
 use Session;
+use Auth;
 class ArticleController extends Controller
 {
     //
 
-    public function add(Request $request){
+
+
+    public function __construct()
+    {
+
+        $this->middleware('auth', ['except' => 'show_articles','single_article']);
+    }
+
+
+    public function add_article(Request $request){
+
         $article=new Article();
          $article->title=$request->article_title;
          $article->description=$request->article_description;

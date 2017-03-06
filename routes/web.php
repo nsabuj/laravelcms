@@ -30,7 +30,8 @@ Route::get('/add_article', function () {
 });
 
 
-Route::get('/edit_article/{id}', 'ArticleController@edit_article');
+Route::get('/edit_article/{id}',
+    'ArticleController@edit_article');
 
 Route::get('/edit_article', 'ArticleController@edit_article');
 
@@ -38,7 +39,7 @@ Route::get('/articles', 'ArticleController@show_articles');
 
 Route::get('/edit_articles', 'ArticleController@edit_articles');
 
-Route::post('article/add_article', 'ArticleController@add');
+Route::post('article/add_article', 'ArticleController@add_article');
 
 Route::post('auth/register', 'CustomAuthController@CustomPostRegister');
 
@@ -54,3 +55,7 @@ Route::get('/article','ArticleController@single_article');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/logout', 'CustomAuthController@logout');
+
+
