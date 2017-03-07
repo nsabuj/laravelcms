@@ -1,0 +1,14 @@
+{
+    "name": "testpackage/testpackage1",
+    "description": "Testing",
+    "type": "test",
+    "license": "1.0",
+    "authors": [
+        {
+            "name": "Sabuj",
+            "email": "sabuj@bglobalsourcing.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
