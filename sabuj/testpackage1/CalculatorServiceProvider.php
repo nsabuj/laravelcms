@@ -15,9 +15,11 @@ class CalculatorServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/routes/route.php');
 
-        $this->loadViewsFrom(__DIR__.'views', 'testpackage1');
+     //   $this->loadViewsFrom(__DIR__.'/views', 'testpackage1');
 
+      //  require __DIR__.'/routes/route.php';
 
+        $this->loadViewsFrom(__DIR__ . '/views', 'testpackage1');
 
 
     }
@@ -30,5 +32,8 @@ class CalculatorServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind('testpackage1',function(){
+            return new Calculator();
+        });
     }
 }
